@@ -1,0 +1,1223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.swiper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.swiper-slide {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.swiper-slide.header-hero-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.swiper-slide.animated-separator-slide {
+    background-color: #f0f0f0; /* Cor de fundo da sua página */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos da Paginação do Swiper */
+.swiper-pagination-bullet {
+    background-color: #dcdcdc; /* Cor dos pontinhos inativos */
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #E12673; /* Cor dos pontinhos ativos (rosa) */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F2F2F2; 
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 140px;
+}
+
+.s-logo {
+    width: 200px;
+    object-fit: contain; 
+    margin-right: 12px;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    color: #000000; 
+    font-weight: 300; 
+}
+
+.avatar {
+    width: 32px; /* Slightly larger for the avatar */
+    height: 32px;
+    background-color: #e0e0e0; /* Gray background for the circle */
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 10px; /* Space between circle and username */
+    /* Optional: add a subtle border or box-shadow for depth */
+    /* border: 1px solid #ccc; */
+}
+.instagram-avatar {
+    width: 32px; /* Ajuste o tamanho conforme necessário */
+    height: 32px;
+    border-radius: 50%; /* Mantém o formato circular do background, se o SVG for menor */
+    /* Cor inicial do ícone (cinza) */
+    fill: #E0E0E0; /* Para SVGs que permitem preenchimento por CSS */
+    transition: fill 0.3s ease; /* Transição apenas para a cor do preenchimento */
+    /* Removido o transform e a transição de transform daqui para a animação */
+}
+
+.instagram-avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.instagram-avatar-container:hover .instagram-avatar {
+    animation: spin 2s linear infinite; /* Aplica a animação: 2s de duração, linear, infinito */
+    fill: #E12673; /* Muda a cor do ícone para rosa */
+}
+
+.instagram-avatar-container:hover span {
+    color: #E12673; /* Cor rosa para o texto @samueljunq */
+}
+
+.instagram-avatar-container .instagram-avatar {
+    animation: none; 
+}
+.instagram-avatar-container span {
+    font-size: 0.95em;
+    color: #666;
+    margin-left: 10px;
+    transition: color 0.3s ease; 
+}
+
+.avatar-wrapper {
+    position: relative; 
+    width: 32px; 
+    height: 32px;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease, fill 0.3s ease;
+    opacity: 0; 
+    fill: #E0E0E0;
+    cursor: pointer;
+}
+
+.instagram-avatar-container:hover .avatar {
+    opacity: 0;
+}
+
+.instagram-avatar-container:hover .instagram-overlay {
+    opacity: 1; 
+    transform: rotate(360deg);
+    fill: #E12673;
+}
+
+.instagram-avatar-container span {
+    font-size: 0.95em;
+    color: #666;
+    margin-left: 10px;
+}
+
+/*seção hero*/
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-right: 130px; 
+    padding-left: 130px; 
+    min-height: calc(100vh - 80px);
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 4.4em;
+    letter-spacing: -0.08em;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-weight: 100;
+    color: #000000;
+    letter-spacing: -0.025em;
+    margin-bottom: 40px;
+    max-width: 540px;
+}
+
+.btn-primary {
+    display: inline-flex; 
+    align-items: center; 
+    color: #000000; 
+    text-decoration: none; 
+    padding: 15px 30px; 
+    border-radius: 50px;
+    border: 1px solid #676767; 
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.08em;
+    font-size: 1em;
+    font-weight: 300; 
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary svg {
+    margin-left: 10px; 
+    width: 20px; 
+    height: 20px;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    color: #E12673;
+}
+
+.btn-primary:hover {
+    background-color: #E12673;
+    border-color: #E12673; 
+    color: #fff; 
+}
+
+.btn-primary:hover svg {
+    transform: translateX(5px);
+    fill: #fff;
+    color: #F2F2F2;
+}
+
+.hero-image-placeholder {
+    flex: 1; 
+    max-width: 500px; 
+    width: 100%;
+    height: 380px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.hero-image-placeholder img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do seu contêiner */
+    height: 100%; /* Faz a imagem ocupar 100% da altura do seu contêiner */
+    object-fit: cover; /* MUITO IMPORTANTE: Corta a imagem para preencher o contêiner, mantendo a proporção */
+    /* Alternativa a 'cover' é 'contain', que redimensiona a imagem para caber sem cortar, mas pode deixar barras vazias */
+    /* object-position: center; */ /* Opcional: Garante que o centro da imagem seja mantido ao cortar */
+}
+
+/* --- Seção de Serviços --- */
+.services-section {
+    display: flex; 
+    justify-content: center; 
+    gap: 45px; 
+    padding: 80px 0px; 
+    flex-wrap: wrap; 
+}
+
+.service-card {
+    flex: 1; 
+    max-width: 380px;
+    padding: 40px; 
+    min-height: 480px;
+    border-radius: 2px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.pink-bg {
+    background-color: #E12673;
+}
+
+.black-bg {
+    background-color: #000000;
+}
+
+.gray-bg {
+    background-color: #E6E6E6;
+}
+
+.service-card h3 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.08em;
+    font-size: 1.8em; 
+    font-weight: 800; 
+    line-height: 1.2;
+    margin-bottom: 20px; 
+    color: white; 
+}
+
+.gray-bg h3 {
+    color: #1a1a1a;
+}
+
+.service-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    letter-spacing: -0.02em;
+    line-height: 1.6;
+    margin-bottom: 30px; 
+    color:white;
+}
+
+.gray-bg p {
+    color: #161616; 
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    letter-spacing: -0.08em;
+    padding: px 25px; 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    font-weight: 400;
+    margin-top: auto; 
+    color: #fff; 
+    background-color: transparent;
+    font-style: italic;
+}
+
+.gray-bg .btn-secondary {
+    color: #1a1a1a; 
+}
+
+.btn-secondary svg {
+    margin-left: 10px;
+    width: 25px; 
+    height: 18px;
+    transition: transform 0.4s ease, fill 0.3s ease;
+    fill: #fff; 
+}
+
+.gray-bg .btn-secondary svg {
+    fill: #1a1a1a;
+}
+
+.btn-secondary:hover {
+    color: rgb(255, 255, 255); 
+}
+
+.gray-bg .btn-secondary:hover {
+    color: #000000;
+}
+
+.btn-secondary:hover svg {
+    transform: translateX(5px);
+    fill: #FF69B4;
+}
+
+.gray-bg .btn-secondary:hover svg {
+    fill: #fff; 
+}
+
+.about-section {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 80px 0px; 
+    gap: 60px; 
+    flex-wrap: wrap;
+}
+
+.about-image-placeholder {
+    width: 100%;
+    max-width: 250px; /* Largura máxima para a foto */
+    height: 250px; /* Altura para a foto (tornando-a quadrada) */
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: auto;
+    border-radius: 8px; /* Bordas arredondadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+}
+
+.about-image-placeholder img {
+    width: 100%; /* A imagem ocupa a largura do container */
+    height: 100%; /* A imagem ocupa a altura do container */
+    object-fit: cover; /* Recorta a imagem para preencher o container, mantendo a proporção */
+    border-radius: 8px; /* Aplica border-radius na imagem também */
+}
+
+.about-content {
+    flex: 1; 
+    max-width: 650px; 
+    order: 2; 
+}
+
+.about-content h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.2em;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -0.08em;
+}
+
+.about-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em; 
+    line-height: 1.6;
+    color: #0f0f0f;
+    font-weight: 300;
+    max-width: 580px;
+    letter-spacing: -0.06em;
+}
+
+/* --- Seção "Minha trajetória" --- */
+.my-trajectory-section {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding: 100px 150px;
+    gap: 60px; 
+    flex-wrap: wrap;
+}
+
+.trajectory-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    margin-right: auto;
+}
+
+.my-trajectory-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5em; /* Tamanho do título */
+    font-weight: 800;
+    color: #050505;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -0.08em;
+    max-width: 450px; /* Ajuste este valor para controlar a quebra de linha do título */
+}
+
+.my-trajectory-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #242424;
+    letter-spacing: -0.04em;
+    font-weight: 300;
+    max-width: 600px; 
+    text-align: left; 
+}
+
+.trajectory-cards-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    min-width: 320px;
+    max-width: 500px;
+}
+
+.trajectory-block {
+    display: flex;
+    padding: 30px; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.black-block {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.gray-block {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+}
+
+.block-image-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 2px;
+  flex-shrink: 0; /* Impede que o container da imagem encolha */
+}
+
+.block-image-placeholder img {
+  width: 100%; /* Faz a imagem ocupar toda a largura do seu container (80px) */
+  height: 100%; /* Faz a imagem ocupar toda a altura do seu container (80px) */
+  object-fit: contain; /* Garante que o logo não seja cortado ou distorcido */
+}
+
+
+.block-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+}
+
+.trajectory-block h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: -0.08em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+.trajectory-block h3 sup {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+.trajectory-block p {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.04em;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 15px; 
+    color: inherit;
+}
+
+.block-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: inherit; 
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.block-link svg {
+    margin-left: 8px; 
+    width: 16px;
+    height: 16px;
+    fill: currentColor; 
+    transition: transform 0.3s ease;
+}
+
+.block-link:hover {
+    color: #E12673; 
+}
+
+.block-link:hover svg {
+    transform: translateX(5px); 
+    fill: #E12673; 
+}
+
+.projects-section {
+    padding: 100px 0; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.4em;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 60px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 60px;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden; 
+}
+
+.carousel-track {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+    margin-bottom: 20px; 
+}
+
+.carousel-track:last-child {
+    margin-bottom: 0;
+}
+
+.carousel-item {
+    flex-shrink: 0; 
+    width: 320px; 
+    height: 320px; 
+    margin-right: 20px; 
+    background-color: #e6e6e6; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+}
+.carousel-item img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do card */
+    height: 100%; /* Faz a imagem ocupar 100% da altura do card */
+    object-fit: cover; /* ESSENCIAL: Redimensiona a imagem para preencher o contêiner, cortando o excesso se necessário, mas sem distorcer a proporção. */
+    display: block; /* Remove pequenos espaços que podem aparecer abaixo da imagem. */
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animações CSS Keyframes para o movimento */
+@keyframes scrollLeft {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes scrollRight {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0%); }
+}
+
+.track-top.animate {
+    animation: scrollLeft var(--scroll-speed) linear infinite; 
+}
+
+.track-bottom.animate {
+    animation: scrollRight var(--scroll-speed) linear infinite; 
+}
+
+.tools-section {
+    padding: 100px 130px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tools-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5em;
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.1;
+    margin-bottom: 60px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    max-width: 800px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%; 
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tool-card {
+    background-color: #e6e6e6;
+    border-radius: 2px; 
+    padding: 25px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px); 
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-icon img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8);
+}
+
+.tool-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.tool-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 300;
+    color: #1d1d1d; 
+    background-color: #e6e6e6; 
+    padding: 6px 14px;
+    border-radius: 50px; 
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+}
+
+/* --- Footer Section --- */
+footer {
+    padding: 100px 130px 40px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.interact-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #555;
+    letter-spacing: -0.02em;
+}
+
+.interaction-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 250px;
+}
+
+.interaction-links li {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 25px; 
+    position: relative;
+}
+
+.interaction-links li:last-child {
+    margin-bottom: 0;
+}
+
+
+.interaction-links li a {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    transition: color 0.3s ease;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.interaction-links li:hover a {
+    color: #E12673;
+}
+
+.link-arrow {
+    width: 24px; 
+    height: 24px;
+    fill: #E12673;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+li:not(.has-arrow) .link-arrow {
+    display: none;
+}
+
+.interaction-links li:hover .link-arrow {
+    transform: translateX(8px);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 220px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.phone-number {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.05em;
+}
+
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 60px;
+}
+
+.copyright {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+    letter-spacing: -0.04em;
+}
+
+.copyright:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================================= */
+/* --- RESPONSIVIDADE PARA MOBILE (MAX-WIDTH: 762px) --- */
+/* ========================================================= */
+@media (max-width: 762px) {
+    body {
+        font-size: 85%;
+    }
+
+    /* --- HEADER --- */
+    header {
+        padding: 20px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        text-align: left;
+    }
+    header .logo-container {
+        width: 100%;
+        justify-content: center;
+    }
+    header .s-logo { 
+        width: 120px; 
+        margin-right: 0;
+    }
+    header .username {
+        justify-content: center;
+        width: 100%;
+    }
+    .instagram-avatar-container {
+        justify-content: center;
+    }
+    .instagram-avatar-container span {
+        font-size: 1.1em;
+    }
+
+    /* --- SEÇÃO HERO --- */
+    .hero-section {
+        flex-direction: column;
+        text-align: left;
+        padding: 60px 20px;
+        gap: 30px;
+        min-height: auto;
+        align-items: flex-start;
+    }
+    .hero-content {
+        max-width: 100%;
+        padding-left: 1px;
+        padding-right: 1px;
+        border-left: none;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+        letter-spacing: -0.08em;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-content p {
+        font-size: 1em;
+        letter-spacing: -0.02em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 0.9em;
+        letter-spacing: -0.04em;
+    }
+    .hero-image-placeholder {
+        width: 100%;
+        height: 250px;
+        max-width: 350px;
+        margin-left: 0;
+        margin-right: auto;
+        justify-content: flex-start;
+
+    }
+    .hero-image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* --- SEÇÃO DE SERVIÇOS (CARDS) --- */
+    .services-section {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px; /* Reduza este valor. Era 60px. Tente 40px, 30px, ou menos. */
+        padding-bottom: 20px; /* Mantém o padding inferior, ou ajuste se precisar */
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 20px; /* Menor gap */
+    }
+    .service-card {
+        width: 100%; /* Ocupa largura total */
+        max-width: 350px; /* Limita a largura do card individual */
+        min-height: auto; /* Remove min-height fixo */
+        padding: 20px;
+    }
+    .service-card h3 {
+        font-size: 1.4em;
+        letter-spacing: -0.04em;
+    }
+    .service-card p {
+        font-size: 0.9em;
+        letter-spacing: -0.01em;
+    }
+    .btn-secondary {
+        font-size: 0.8em;
+        padding: 8px 15px; /* Menor padding para o botão */
+    }
+
+    
+
+    /* --- SEÇÃO "QUEM É SAMUEL JUNQUEIRA?" (ABOUT) --- */
+     .about-section {
+        flex-direction: column; /* Empilha imagem e texto */
+        text-align: left; /* Alinha o texto à esquerda por padrão para esta seção */
+        padding-top: 60px; /* Mantém o padding superior */
+        padding-bottom: 30px; /* Reduz o padding inferior desta seção */
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 30px; /* Reduz o espaçamento entre a imagem e o conteúdo de texto */
+        align-items: flex-start; /* Alinha os blocos (imagem e conteúdo) à esquerda */
+    }
+    .about-image-placeholder {
+        width: 100%; /* Ocupa a largura total (dentro do padding da section) */
+        max-width: 250px; /* Reduz a largura máxima para a foto, tornando-a mais compacta */
+        height: 250px; /* Torna a foto quadrada */
+        margin-bottom: 0; /* Remove a margem inferior para o gap controlar */
+        margin-left: 0; /* Alinha a foto à esquerda */
+        margin-right: auto;
+        border-radius: 8px; /* Adiciona bordas arredondadas para a foto */
+        display: flex; /* Garante que o conteúdo interno (a imagem real) possa ser centralizado */
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Garante que a imagem com border-radius seja cortada */
+    }
+    .about-image-placeholder img {
+        width: 100%; /* Faz a imagem preencher o placeholder */
+        height: 100%;
+        object-fit: cover; /* Corta a imagem para preencher, mantendo proporção */
+    }
+    .about-content {
+        max-width: 100%; /* Ocupa a largura total disponível */
+        text-align: left; /* Garante que o texto esteja alinhado à esquerda */
+    }
+
+    .about-content h2 {
+        font-size: 2.2em; /* Reduz o tamanho do título */
+        letter-spacing: -0.04em;
+        max-width: 100%;
+        margin-left: 0; /* Garante alinhamento à esquerda */
+        margin-right: auto;
+        text-align: left;
+        margin-bottom: 15px; /* Reduz o espaçamento abaixo do título */
+    }
+
+    .about-content p {
+        font-size: 0.9em; /* Reduz o tamanho do parágrafo */
+        letter-spacing: -0.02em;
+        max-width: 100%; /* Ocupa a largura total */
+        margin-left: 0; /* Garante alinhamento à esquerda */
+        margin-right: auto;
+        text-align: left;
+    }
+
+    /* --- SEÇÃO "MINHA TRAJETÓRIA" --- */
+    .my-trajectory-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px; /* Padding reduzido */
+        gap: 30px;
+        text-align: center;
+    }
+    .trajectory-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .my-trajectory-section h2 {
+        font-size: 2.2em;
+        letter-spacing: -0.04em;
+        max-width: 100%; /* Ocupa largura total */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .my-trajectory-section p {
+        font-size: 0.9em;
+        letter-spacing: -0.02em;
+        max-width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .trajectory-cards-container {
+        width: 100%;
+        max-width: 350px; /* Limita largura */
+        gap: 15px;
+    }
+    .trajectory-block {
+        flex-direction: column; /* Empilha logo e texto no bloco */
+        align-items: left;
+        text-align: center;
+        padding: 20px;
+        gap: 10px;
+    }
+    .block-image-placeholder {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
+    }
+    .trajectory-block h3 {
+        font-size: 1.1em;
+        letter-spacing: -0.04em;
+    }
+    .trajectory-block p {
+        font-size: 0.8em;
+        letter-spacing: -0.01em;
+        margin-bottom: 10px;
+    }
+    .block-link {
+        font-size: 0.75em;
+    }
+
+    /* --- SEÇÃO PROJETOS (CARROSSEL) --- */
+    .projects-section {
+        padding: 60px 0; /* Padding lateral 0 */
+    }
+    .projects-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        padding: 0 20px; /* Padding do título para não colar nas bordas */
+    }
+    .carousel-item {
+        width: 220px; /* Ajusta largura do item do carrossel */
+        height: 220px; /* Ajusta altura */
+        margin-right: 15px;
+    }
+
+    /* --- SEÇÃO FERRAMENTAS (GRID) --- */
+    .tools-section {
+        padding: 60px 20px; /* Padding reduzido */
+    }
+    .tools-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em mobile */
+        gap: 10px;
+    }
+    .tool-card {
+        padding: 12px;
+    }
+    .tool-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+    .tool-name {
+        font-size: 0.9em;
+    }
+    .tool-tag {
+        font-size: 0.7em;
+        padding: 3px 6px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        padding: 60px 20px 20px; /* Padding reduzido */
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+    .interact-title {
+        margin-bottom: 15px;
+        font-size: 1em;
+    }
+    .interaction-links ul {
+        width: 100%;
+    }
+    .interaction-links li {
+        margin-bottom: 15px; /* Ajuste espaçamento */
+    }
+    .interaction-links li a {
+        font-size: 1.3em;
+    }
+    .link-arrow {
+        width: 18px;
+        height: 18px;
+        margin-left: auto; /* Mantém a seta na direita */
+    }
+    .contact-info {
+        margin-top: 25px; /* Espaço entre links e telefone */
+        min-height: unset; /* MUITO IMPORTANTE: Remove altura fixa para mobile */
+        justify-content: flex-start; /* Alinha para cima */
+    }
+    .phone-number {
+        font-size: 1.3em;
+    }
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 30px;
+    }
+    .copyright {
+        font-size: 0.8em;
+    }
+}
+
+/* --- CSS para a Linha Animada (Desktop - INVISÍVEL) --- */
+.animated-separator-line {
+    display: none; /* Por padrão, a linha NÃO aparece no desktop */
+}
+
+/* Estado inicial da animação no mobile (invisível) */
+.animated-line {
+    transform: scaleX(0); /* Começa invisível na largura */
+    transform-origin: center; /* Expande do centro */
+    transition: transform 0.8s ease-out; /* Transição suave */
+    opacity: 0; /* Começa transparente */
+}
+
+/* Estado final da animação (visível e desenhada) */
+.animated-line.is-visible {
+    transform: scaleX(1); /* Expande para a largura total */
+    opacity: 1; /* Torna-se visível */
+}
+
+/* Keyframes para a animação (não é mais necessário um @keyframes direto, mas podemos usar se preferir um efeito diferente) */
+/* Se você quiser um fade-in e draw, o 'is-visible' com 'transition' já faz isso. */
+/* Se quiser um efeito mais complexo que não seja só scaleX, aí sim usar @keyframes. */
+
+
+/* ========================================================= */
+/* --- RESPONSIVIDADE PARA MOBILE (MAX-WIDTH: 762px) --- */
+/* ========================================================= */
+@media (max-width: 762px) {
+    /* ... (Seus outros estilos mobile permanecem) ... */
+
+    /* --- AJUSTES DE ESPAÇAMENTO ENTRE ABOUT E TRAJECTORY --- */
+    /* Garante que o padding-bottom da seção 'about' seja o espaço ANTES da linha */
+    .about-section {
+        padding-bottom: 40px; /* Ajuste este valor */
+    }
+
+    /* --- LINHA ANIMADA (SÓ AGORA VISÍVEL E ANIMADA NO MOBILE) --- */
+    .animated-separator-line {
+        display: block; /* A linha aparece agora no mobile */
+        width: 80%; /* Largura da linha */
+        max-width: 300px;
+        height: 4px; /* Grossura da linha */
+        background-color: #E12673; /* Cor rosa da linha */
+        margin: 0 auto; /* Remove margin-top/bottom para usar o padding da seção */
+    }
+
+    /* O restante da animação será controlada pela classe .is-visible em JS */
+
+
+    /* --- AJUSTE DE ESPAÇAMENTO NA SEÇÃO 'MINHA TRAJETÓRIA' --- */
+    .my-trajectory-section {
+        padding-top: 40px; /* Espaço entre a linha animada e o título da seção */
+        /* ... (Mantenha o restante dos paddings e outros estilos) ... */
+    }
+
+}
